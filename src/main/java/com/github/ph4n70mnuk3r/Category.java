@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Class which represents a Product Category.
  */
-public class Category {
+public class Category implements Comparable<Category> {
     private final String name;
 
     public Category(String name) {
@@ -30,5 +30,10 @@ public class Category {
         return "Category{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Category o) {
+        return this.name.compareTo(o.name);
     }
 }

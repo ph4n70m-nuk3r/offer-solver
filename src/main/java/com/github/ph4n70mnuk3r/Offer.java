@@ -9,9 +9,9 @@ import java.util.Objects;
  * Note: Equals/Hashcode/CompareTo only considers 'name' field which is intended to be unique.
  */
 public class Offer implements Comparable<Offer> {
-    String name;
-    OfferChecker offerChecker;
-    OfferApplier offerApplier;
+    final String name;
+    final OfferChecker offerChecker;
+    final OfferApplier offerApplier;
 
     public Offer(String name, OfferChecker offerChecker, OfferApplier offerApplier) {
         this.name = name;

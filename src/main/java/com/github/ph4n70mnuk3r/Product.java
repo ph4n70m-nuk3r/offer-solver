@@ -8,10 +8,10 @@ import java.util.Objects;
  * Implements Comparable for displaying products by ID.
  */
 public class Product implements Comparable<Product> {
-    Integer id;
-    String name;
-    Double price;
-    List<Category> categories;
+    final Integer id;
+    final String name;
+    final Double price;
+    final List<Category> categories;
 
     public Product(Integer id, String name, Double price, List<Category> categories) {
         this.id = id;

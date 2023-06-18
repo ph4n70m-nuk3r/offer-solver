@@ -6,7 +6,7 @@ import java.util.List;
  * Class which represents a customer's basket.
  */
 public class Basket {
-    List<Product> products;
+    final List<Product> products;
 
     public Basket(List<Product> products) {
         this.products = products;
