@@ -10,7 +10,7 @@ public enum PRODUCT_NAMES {
     PORK_PIES_2PK("PorkPies2Pack"),
     COCA_COLA_500ML("CocaCola"),
     FRUIT_SMOOTHIE("FruitSmoothie"),
-
+    WATER_250ml("Water250ml"),
     RED_GRAPES_250G("RedGrapes250G"),
     GREEN_GRAPES_250G("GreenGrapes250G"),
     PHYSALIS_150G("Physalis150G"),
