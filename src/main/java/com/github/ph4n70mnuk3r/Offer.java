@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Class which represents an offer.
- * Implements Comparable for sorting purposes.
+ * Class which represents an offer. Implements Comparable for sorting purposes.
  * Note: Equals/Hashcode/CompareTo only considers 'name' field which is intended to be unique.
  */
 public class Offer implements Comparable<Offer> {
