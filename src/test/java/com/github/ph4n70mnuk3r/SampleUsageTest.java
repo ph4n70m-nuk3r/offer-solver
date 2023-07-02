@@ -1,6 +1,7 @@
 package com.github.ph4n70mnuk3r;
 
 import com.github.ph4n70mnuk3r.enums.CATEGORY_NAMES;
+import com.github.ph4n70mnuk3r.enums.OFFER_NAMES;
 import com.github.ph4n70mnuk3r.enums.PRODUCT_NAMES;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,9 @@ public class SampleUsageTest {
     private final TestUtils testUtils = new TestUtils();
 
     @Test
-    void categoriesTest() {
+    void categoryMapTest() {
+        System.out.println(">>> CATEGORIES <<<");
+        testUtils.categoryMap.values().stream().sorted().forEach(System.out::println);
         // Check expected number of categories exist.
         assertTrue(CATEGORY_NAMES.values().length > 0);
         assertEquals(CATEGORY_NAMES.values().length, testUtils.categoryMap.size());
@@ -28,7 +31,9 @@ public class SampleUsageTest {
         }
     }
     @Test
-    void productsTest() {
+    void productMapTest() {
+        System.out.println(">>> PRODUCTS <<<");
+        testUtils.productMap.values().stream().sorted().forEach(System.out::println);
         // Check expected number of products exist.
         assertTrue(testUtils.productMap.size() > 0);
         assertEquals(PRODUCT_NAMES.values().length, testUtils.productMap.size());
@@ -37,6 +42,30 @@ public class SampleUsageTest {
             assertTrue(testUtils.productMap.containsKey(productName.label));
             assertEquals(productName.label, testUtils.productMap.get(productName.label).name);
         }
+    }
+    @Test
+    void offerMapTest() {
+        System.out.println(">>> BASKET <<<");
+        testUtils.offerMap.values().stream().sorted().forEach(System.out::println);
+        // Check expected number of offers exist.
+        assertTrue(testUtils.offerMap.size() > 0);
+        assertEquals(OFFER_NAMES.values().length, testUtils.offerMap.size());
+        // Check all enum values exist in offerMap.
+        for (var offerName : OFFER_NAMES.values()) {
+            assertTrue(testUtils.offerMap.containsKey(offerName.label));
+            assertEquals(offerName.label, testUtils.offerMap.get(offerName.label).name);
+        }
+    }
+    @Test
+    void sampleBasketTest() {
+        System.out.println(">>> BASKET <<<");
+        testUtils.basket.products.stream().sorted().forEach(System.out::println);
+        // Check expected number of products exist in basket.
+        assertTrue(testUtils.basket.products.size() > 0);
+        var totalUniqueProducts = testUtils.productMap.size();
+        var totalUniqueProductsInBasket = testUtils.basket.products.stream()
+                .distinct().toList();
+        assertTrue(totalUniqueProductsInBasket.size() > totalUniqueProducts);
     }
     @Test
     void maybellineBOGOFOfferTest() {
@@ -178,17 +207,5 @@ public class SampleUsageTest {
             // Check basket is eligible for 2 meal deal offers.
             assertEquals(2L, mealDealOffer.offerChecker.check(basket));
         }
-    }
-    @Test
-    void offersTest() {
-        // ToDo: impl!
-        System.out.println(">>> BASKET <<<");
-        testUtils.offerMap.values().stream().sorted().forEach(System.out::println);
-    }
-    @Test
-    void sampleBasketTest() {
-        // ToDo: impl!
-        System.out.println(">>> BASKET <<<");
-        testUtils.basket.products.stream().sorted().forEach(System.out::println);
     }
 }

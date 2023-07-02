@@ -74,13 +74,11 @@ public class TestUtils {
         Map<String, Offer> offersMap = new HashMap<>();
         offersMap.put(MAYBELLINE_BOGOF_OFFER.label, createMaybellineBOGOFOffer());
         offersMap.put(MEAL_DEAL_OFFER.label, createMealDealOffer());
-        /* ToDo:
-         *    - nestle cereal offer
-         *    - all cereal 50p off offer
-         *    - fruit 3-for-2 offer
-         *    - snack 50p off offer
-         *    - smoothie 70p off offer
-         */
+        offersMap.put(NESTLE_CEREAL_OFFER.label,createNestleCerealOffer());
+        offersMap.put(CEREAL_50P_OFF_OFFER.label, createCereal50pOffOffer());
+        offersMap.put(FRUIT_3_FOR_2_OFFER.label, createFruit3For2Offer());
+        offersMap.put(SNACK_50P_OFF_OFFER.label, createSnack50pOffOffer());
+        offersMap.put(SMOOTHIE_70P_OFF_OFFER.label, createSmoothie70pOffOffer());
         return offersMap;
     }
 
@@ -122,6 +120,71 @@ public class TestUtils {
         };
         OfferApplier MealDealApplier = OfferUtils::bestMealDealOffer;
         return new Offer(MEAL_DEAL_OFFER.label, MealDealChecker, MealDealApplier);
+    }
+
+    /**
+     * Creates Nestle Cereal offer.
+     * @return Nestle Cereal offer.
+     */
+    Offer createNestleCerealOffer() {
+        OfferChecker NestleCerealChecker = basket -> {
+            // ToDo: implement NestleCerealChecker.
+            throw new UnsupportedOperationException("NESTLE CEREAL OFFER CHECKER NOT IMPLEMENTED!");
+        };
+        OfferApplier NestleCerealApplier = OfferUtils::bestNestleCerealOffer;
+        return new Offer(NESTLE_CEREAL_OFFER.label, NestleCerealChecker, NestleCerealApplier);
+    }
+
+    /**
+     * Creates Cereal 50p offer.
+     * @return Cereal 50p offer.
+     */
+    Offer createCereal50pOffOffer() {
+        OfferChecker Cereal50pOffChecker = basket -> {
+            // ToDo: implement Cereal50pOffChecker.
+            throw new UnsupportedOperationException("CEREAL 50P OFFER CHECKER NOT IMPLEMENTED!");
+        };
+        OfferApplier Cereal50pOffApplier = OfferUtils::bestCereal50pOffOffer;
+        return new Offer(CEREAL_50P_OFF_OFFER.label, Cereal50pOffChecker, Cereal50pOffApplier);
+    }
+
+    /**
+     * Creates Fruit 3 For 2 offer.
+     * @return Fruit 3 For 2 offer.
+     */
+    Offer createFruit3For2Offer() {
+        OfferChecker Fruit3For2Checker = basket -> {
+            // ToDo: implement Fruit3For2Checker.
+            throw new UnsupportedOperationException("FRUIT 3 FOR 2 OFFER CHECKER NOT IMPLEMENTED!");
+        };
+        OfferApplier Fruit3For2Applier = OfferUtils::bestFruit3For2Offer;
+        return new Offer(FRUIT_3_FOR_2_OFFER.label, Fruit3For2Checker, Fruit3For2Applier);
+    }
+
+    /**
+     * Creates Snack 50p Off offer.
+     * @return Snack 50p Off offer.
+     */
+    Offer createSnack50pOffOffer() {
+        OfferChecker Snack50pOffChecker = basket -> {
+            // ToDo: implement Snack50pOffChecker.
+            throw new UnsupportedOperationException("SNACK 50P OFF OFFER CHECKER NOT IMPLEMENTED!");
+        };
+        OfferApplier Snack50pOffApplier = OfferUtils::bestSnack50pOffOffer;
+        return new Offer(SNACK_50P_OFF_OFFER.label, Snack50pOffChecker, Snack50pOffApplier);
+    }
+
+    /**
+     * Creates Snack 50p Off offer.
+     * @return Snack 50p Off offer.
+     */
+    Offer createSmoothie70pOffOffer() {
+        OfferChecker Smoothie70pOffChecker = basket -> {
+            // ToDo: implement Smoothie70pOffChecker.
+            throw new UnsupportedOperationException("SMOOTHIE 70P OFF OFFER CHECKER NOT IMPLEMENTED!");
+        };
+        OfferApplier Smoothie70pOffApplier = OfferUtils::bestSmoothie70pOffOffer;
+        return new Offer(SMOOTHIE_70P_OFF_OFFER.label, Smoothie70pOffChecker, Smoothie70pOffApplier);
     }
 
     /**

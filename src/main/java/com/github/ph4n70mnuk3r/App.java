@@ -10,6 +10,6 @@ public class App {
      * @param args args passed from command line.
      */
     public static void main(String[] args) {
-        // ToDo: implement.
+        // ToDo: implement App main method.
     }
 }
