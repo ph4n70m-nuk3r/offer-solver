@@ -64,8 +64,12 @@ public class SampleUsageTest {
         assertTrue(testUtils.basket.products.size() > 0);
         var totalUniqueProducts = testUtils.productMap.size();
         var totalUniqueProductsInBasket = testUtils.basket.products.stream()
-                .distinct().toList();
-        assertTrue(totalUniqueProductsInBasket.size() > totalUniqueProducts);
+                .distinct().toList().size();
+        var totalProductsInBasket = testUtils.basket.products.size();
+        // Ensure all products are in basket at least once.
+        assertEquals(totalUniqueProducts, totalUniqueProductsInBasket);
+        // Ensure at least one product is in basket more than once.
+        assertTrue(totalProductsInBasket > totalUniqueProducts);
     }
     @Test
     void maybellineBOGOFOfferTest() {
@@ -161,7 +165,7 @@ public class SampleUsageTest {
         var porkPies = testUtils.productMap.get(PRODUCT_NAMES.PORK_PIES_2PK.label);
         // Drinks
         var cocaCola = testUtils.productMap.get(PRODUCT_NAMES.COCA_COLA_500ML.label);
-        var water250ml = testUtils.productMap.get(PRODUCT_NAMES.WATER_250ml.label);
+        var water250ml = testUtils.productMap.get(PRODUCT_NAMES.WATER_250ML.label);
         var fruitSmoothie = testUtils.productMap.get(PRODUCT_NAMES.FRUIT_SMOOTHIE.label);
         {
             var basket = new Basket(new ArrayList<>());

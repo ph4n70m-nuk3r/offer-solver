@@ -2,7 +2,7 @@ package com.github.ph4n70mnuk3r;
 
 import java.util.List;
 
-public interface OfferSupplier {
+public interface ProductSupplier {
 
     /**
      * Function used to supply products from the basket to the offerApplier.

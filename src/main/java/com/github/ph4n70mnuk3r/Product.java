@@ -24,6 +24,15 @@ public class Product implements Comparable<Product> {
         return categories.stream().anyMatch( c -> c.equals(category) );
     }
 
+    boolean isInCategory(Category ... categoriesToCheck) {
+        for (var categoryToCheck : categoriesToCheck) {
+            if (this.categories.contains(categoryToCheck)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
