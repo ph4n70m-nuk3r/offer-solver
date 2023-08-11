@@ -148,7 +148,7 @@ public class OfferUtils {
      * @return the best possible savings.
      */
     static Double bestFixedPriceDiscountOffer(@NonNull List<Product> products) {
-        if (products.size() < 1) {
+        if (products.isEmpty()) {
             throw new InvalidParameterException("FIXED PRICE DISCOUNT OFFER REQUIRES AT LEAST 1 PRODUCT!");
         }
         // ToDo: fix this method, it makes no sense, should be returning the discount amount not the product price...
@@ -183,8 +183,7 @@ public class OfferUtils {
     }
 
     public static Double bestFruit3For2Offer(@NonNull List<Product> products) {
-        // ToDo: implement bestFruit3For2Offer.
-        throw new UnsupportedOperationException("FRUIT 3 FOR 2 OFFER NOT IMPLEMENTED!");
+        return bestThreeForTwoDiscountOffer(products);
     }
 
     public static Double bestSnack50pOffOffer(@NonNull List<Product> products) {

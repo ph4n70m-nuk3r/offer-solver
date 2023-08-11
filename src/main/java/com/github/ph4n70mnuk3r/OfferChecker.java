@@ -1,6 +1,6 @@
 package com.github.ph4n70mnuk3r;
 
-interface OfferChecker {
+public interface OfferChecker {
 
     /**
      * Function used to check the maximum number of times an offer condition is met.

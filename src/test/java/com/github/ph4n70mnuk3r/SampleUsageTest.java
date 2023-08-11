@@ -35,7 +35,7 @@ public class SampleUsageTest {
         System.out.println(">>> PRODUCTS <<<");
         testUtils.productMap.values().stream().sorted().forEach(System.out::println);
         // Check expected number of products exist.
-        assertTrue(testUtils.productMap.size() > 0);
+        assertFalse(testUtils.productMap.isEmpty());
         assertEquals(PRODUCT_NAMES.values().length, testUtils.productMap.size());
         // Check all enum values exist in productMap.
         for (var productName : PRODUCT_NAMES.values()) {
@@ -45,10 +45,10 @@ public class SampleUsageTest {
     }
     @Test
     void offerMapTest() {
-        System.out.println(">>> BASKET <<<");
+        System.out.println(">>> OFFERS <<<");
         testUtils.offerMap.values().stream().sorted().forEach(System.out::println);
         // Check expected number of offers exist.
-        assertTrue(testUtils.offerMap.size() > 0);
+        assertFalse(testUtils.offerMap.isEmpty());
         assertEquals(OFFER_NAMES.values().length, testUtils.offerMap.size());
         // Check all enum values exist in offerMap.
         for (var offerName : OFFER_NAMES.values()) {
@@ -61,7 +61,7 @@ public class SampleUsageTest {
         System.out.println(">>> BASKET <<<");
         testUtils.basket.products.stream().sorted().forEach(System.out::println);
         // Check expected number of products exist in basket.
-        assertTrue(testUtils.basket.products.size() > 0);
+        assertFalse(testUtils.basket.products.isEmpty());
         var totalUniqueProducts = testUtils.productMap.size();
         var totalUniqueProductsInBasket = testUtils.basket.products.stream()
                 .distinct().toList().size();

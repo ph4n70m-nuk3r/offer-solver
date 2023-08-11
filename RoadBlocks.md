@@ -1,6 +1,6 @@
 RoadBlocks
 ==========
-- Not sure it makes sense to isolate logic for checking best <OFFER_NAME> offer.
+- Not sure that it makes sense to isolate logic for checking best <OFFER_NAME> offer.
   - I feel like it will function like:
     - OfferChecker will set a bound on numbers of possible offers.
     - ProductSupplier will choose which products to supply to OfferApplier.
